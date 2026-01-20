@@ -1,13 +1,4 @@
-# 📘 Oracle VIEW – Database SQL Lesson
-
-## 🎯 Lesson Objectives
-By the end of this lesson, students will be able to:
-- Explain what a VIEW is in Oracle
-- Understand why and when to use a VIEW
-- Create, query, update, and drop a VIEW
-- Distinguish between simple and complex views
-- Apply VIEWs for security and abstraction
-
+# 📘 Oracle VIEW
 ---
 
 ## 1️⃣ What is a VIEW?
@@ -24,20 +15,20 @@ A **VIEW** in Oracle is a **virtual table** created from a SQL `SELECT` statemen
 
 ## 2️⃣ Why Use VIEWs?
 
-### ✅ Advantages
+### Advantages
 - Security (hide sensitive columns)
 - Simplifies complex queries
 - Reusability
 - Logical abstraction
 - Cleaner and readable SQL
 
-### ❌ Disadvantages
+### Disadvantages
 - Performance cost for complex views
 - Not all views are updatable
 
 ---
 
-## 3️⃣ CREATE VIEW Syntax
+## CREATE VIEW Syntax
 
 ```sql
 CREATE VIEW view_name AS
@@ -60,9 +51,9 @@ SELECT * FROM emp_basic;
 
 ---
 
-## 4️⃣ Types of VIEWs
+## Types of VIEWs
 
-### 🔹 Simple VIEW
+### Simple VIEW
 - Based on one table
 - No GROUP BY, JOIN, or functions
 - Can allow INSERT, UPDATE, DELETE
@@ -76,7 +67,7 @@ WHERE department_id = 80;
 
 ---
 
-### 🔹 Complex VIEW
+### Complex VIEW
 - Uses JOIN, GROUP BY, or functions
 - Usually read-only
 
@@ -89,16 +80,16 @@ GROUP BY department_id;
 
 ---
 
-## 5️⃣ Updating Data Through a VIEW
+## Updating Data Through a VIEW
 
-### ✔ Allowed (Simple VIEW)
+### Allowed (Simple VIEW)
 ```sql
 UPDATE emp_sales
 SET salary = 6000
 WHERE employee_id = 101;
 ```
 
-### ❌ Not Allowed (Complex VIEW)
+### Not Allowed (Complex VIEW)
 ```sql
 UPDATE dept_salary_summary
 SET avg_salary = 7000;
@@ -107,7 +98,7 @@ SET avg_salary = 7000;
 
 ---
 
-## 6️⃣ VIEW WITH CHECK OPTION
+## VIEW WITH CHECK OPTION
 
 ```sql
 CREATE VIEW emp_hr AS
