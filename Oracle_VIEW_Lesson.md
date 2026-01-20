@@ -1,7 +1,4 @@
-# 📘 Oracle VIEW
----
-
-## 1️⃣ What is a VIEW?
+## What is a VIEW?
 A **VIEW** in Oracle is a **virtual table** created from a SQL `SELECT` statement.
 
 - A VIEW does **not store data**
@@ -13,7 +10,7 @@ A **VIEW** in Oracle is a **virtual table** created from a SQL `SELECT` statemen
 
 ---
 
-## 2️⃣ Why Use VIEWs?
+## Why Use VIEWs?
 
 ### Advantages
 - Security (hide sensitive columns)
@@ -78,53 +75,7 @@ FROM employees
 GROUP BY department_id;
 ```
 
----
-
-## Updating Data Through a VIEW
-
-### Allowed (Simple VIEW)
-```sql
-UPDATE emp_sales
-SET salary = 6000
-WHERE employee_id = 101;
-```
-
-### Not Allowed (Complex VIEW)
-```sql
-UPDATE dept_salary_summary
-SET avg_salary = 7000;
--- ERROR
-```
-
----
-
-## VIEW WITH CHECK OPTION
-
-```sql
-CREATE VIEW emp_hr AS
-SELECT employee_id, first_name, department_id
-FROM employees
-WHERE department_id = 40
-WITH CHECK OPTION;
-```
-
----
-
-## 7️⃣ VIEW for Security
-
-```sql
-CREATE VIEW emp_public AS
-SELECT employee_id, first_name
-FROM employees;
-```
-
-```sql
-GRANT SELECT ON emp_public TO user1;
-```
-
----
-
-## 8️⃣ DROP VIEW
+## DROP VIEW
 
 ```sql
 DROP VIEW emp_public;
@@ -132,7 +83,7 @@ DROP VIEW emp_public;
 
 ---
 
-## 9️⃣ VIEW vs TABLE
+## VIEW vs TABLE
 
 | Feature | TABLE | VIEW |
 |------|------|------|
@@ -144,19 +95,10 @@ DROP VIEW emp_public;
 
 ---
 
-## 🧪 Practice Exercises
+## Practice Exercises
 
 ### Exercise 1
 Create a VIEW that shows employees with job_id = 'IT_PROG'
 
 ### Exercise 2
 Create a VIEW showing total salary per department
-
-### Exercise 3
-Explain why this VIEW is not updatable:
-```sql
-CREATE VIEW v1 AS
-SELECT department_id, COUNT(*)
-FROM employees
-GROUP BY department_id;
-```
