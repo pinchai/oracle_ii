@@ -111,6 +111,7 @@ CREATE TABLE employees (
     CONSTRAINT fk_dept
         FOREIGN KEY (department_id)
         REFERENCES departments(department_id)
+        ON DELETE CASCADE
 );
 ```
 
