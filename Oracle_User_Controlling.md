@@ -1,4 +1,4 @@
-# Oracle User Controlling – Lesson Plan
+# Oracle User Controll
 
 ---
 
